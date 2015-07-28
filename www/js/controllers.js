@@ -16,10 +16,9 @@ angular.module('starter.controllers', ['restangular'])
   //$scope.$on('$ionicView.enter', function(e) {
   //});
   $scope.my_pooop = null;
-  var pooops = Restangular.all('pooops');
 
   $scope.new_pooop = function () {
-    pooops.post({"start":moment(),"poooper":'admin'}).then(function  (pooop) {
+    Restangular.all('pooops').post({"start":moment(),"poooper":'admin'}).then(function  (pooop) {
       $scope.my_pooop = pooop;
     })
   }
