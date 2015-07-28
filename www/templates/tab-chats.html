@@ -1,9 +1,12 @@
-<ion-view view-title="Chats">
+<ion-view view-title="Voy a cagar">
   <ion-content padding="true">
    <div class="row row-center">
       <div class="col">
-        <button class="button button-block button-positive icon-left ion-nuclear">
+        <button class="button button-block button-positive icon-left ion-nuclear" ng-click="new_pooop()" ng-if="!my_pooop">
           Iniciar cagada
+        </button>
+        <button class="button button-block button-positive icon-left ion-nuclear" ng-click="finish_pooop()" ng-if="my_pooop">
+          Acabar cagada
         </button>
       </div>
     </div>

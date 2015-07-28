@@ -1,8 +1,13 @@
-angular.module('starter.controllers', [])
+angular.module('starter.controllers', ['restangular'])
 
-.controller('DashCtrl', function($scope) {})
+.controller('DashCtrl', function($scope,Restangular) {
+  Restangular.one('pooopers','admin').get().then(function  (poooper) {
+    $scope.poooper = poooper;
+  })
 
-.controller('ChatsCtrl', function($scope, Chats) {
+})
+
+.controller('ChatsCtrl', function($scope, Restangular) {
   // With the new view caching in Ionic, Controllers are only called
   // when they are recreated or on app start, instead of every page change.
   // To listen for when this page is active (for example, to refresh data),
@@ -10,11 +15,21 @@ angular.module('starter.controllers', [])
   //
   //$scope.$on('$ionicView.enter', function(e) {
   //});
+  $scope.my_pooop = null;
+  var pooops = Restangular.all('pooops');
 
-  $scope.chats = Chats.all();
-  $scope.remove = function(chat) {
-    Chats.remove(chat);
-  };
+  $scope.new_pooop = function () {
+    pooops.post({"start":moment(),"poooper":'admin'}).then(function  (pooop) {
+      $scope.my_pooop = pooop;
+    })
+  }
+
+  $scope.finish_pooop = function () {
+    $scope.my_pooop.end = moment();
+    $scope.my_pooop.save();
+    $scope.my_pooop = null;
+  }
+
 })
 
 .controller('ChatDetailCtrl', function($scope, $stateParams, Chats) {
