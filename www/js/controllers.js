@@ -35,8 +35,14 @@ angular.module('starter.controllers', ['restangular'])
   $scope.chat = Chats.get($stateParams.chatId);
 })
 
-.controller('AccountCtrl', function($scope) {
-  $scope.settings = {
-    enableFriends: true
-  };
+.controller('AccountCtrl', function($scope,Restangular) {
+  Restangular.one('pooopers','avances123').get().then(function  (poooper) {
+    $scope.poooper = poooper;
+    $scope.poooper.salary = parseFloat($scope.poooper.salary);  // TODO viene de la api en string
+  })
+
+  $scope.submit = function  () {
+    console.log("hola");
+    $scope.poooper.save();
+  }
 });
