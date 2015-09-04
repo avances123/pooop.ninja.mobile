@@ -44,10 +44,11 @@ angular.module('starter.controllers', ['restangular'])
   var todos = Restangular.all('pooopers');
   todos.one('avances123').get().then(function  (poooper) {
     $scope.poooper = poooper;
-    $scope.poooper.salary = parseFloat($scope.poooper.salary);  // TODO viene de la api en string
   })
 
   $scope.submit = function  () {
-    $scope.poooper.put();
+    $scope.poooper.save().then(function  (poooper) {
+      $scope.myForm.$dirty = false;
+    })
   }
 });

@@ -1,4 +1,4 @@
-<ion-view view-title="Dashboard">
+<ion-view view-title="Dashboard" cache-view="false">
   <ion-content class="padding">
     <div class="list card">
       <div class="item item-divider">Dinero cagando</div>
@@ -7,7 +7,7 @@
           <b>{{poooper.total_earned}} €</b> Ganados en total
         </div>
         <div>
-          <b>---- €</b> Medios por cagada
+          <b>{{poooper.total_earned / poooper.total_pooops}} €</b> Medios por cagada
         </div>
       </div>
     </div>
@@ -15,10 +15,10 @@
       <div class="item item-divider">Mas estadistica</div>
       <div class="item item-body">
         <div>
-          <b>---</b> Cagadas en total
+          <b>{{poooper.total_pooops}}</b> Cagadas en total
         </div>
           <div>
-          <b>---</b> Horas cagando en total
+          <b>{{poooper.total_poooped}}</b> Horas cagando en total
         </div>
       </div>
     </div>
