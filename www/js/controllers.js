@@ -47,8 +47,13 @@ angular.module('starter.controllers', ['restangular'])
   })
 
   $scope.submit = function  () {
+    console.log("submit");
     $scope.poooper.save().then(function  (poooper) {
       $scope.myForm.$dirty = false;
     })
+  }
+
+  $scope.reset = function  () {
+    console.log("reset");
   }
 });
