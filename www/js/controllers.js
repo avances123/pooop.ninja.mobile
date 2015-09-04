@@ -1,7 +1,7 @@
 angular.module('starter.controllers', ['restangular'])
 
 .controller('DashCtrl', function($scope,Restangular) {
-  Restangular.one('pooopers','admin').get().then(function  (poooper) {
+  Restangular.one('pooopers','avances123').get().then(function  (poooper) {
     $scope.poooper = poooper;
   })
 
@@ -18,7 +18,7 @@ angular.module('starter.controllers', ['restangular'])
   $scope.my_pooop = null;
 
   $scope.new_pooop = function () {
-    Restangular.all('pooops').post({"start":moment(),"poooper":'admin'}).then(function  (pooop) {
+    Restangular.all('pooops').post({"start":moment(),"poooper":'avances123'}).then(function  (pooop) {
       $scope.my_pooop = pooop;
     })
   }

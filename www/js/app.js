@@ -86,7 +86,16 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','r
 
 
 .config(function(RestangularProvider) {
-  RestangularProvider.setBaseUrl('http://localhost:8000/api');
+  //RestangularProvider.setBaseUrl('http://localhost:8000/api');
+  RestangularProvider.setBaseUrl('http://pooop-ninja.herokuapp.com/api');
 })
+
+
+//http://stackoverflow.com/questions/27874855/how-to-place-ionic-tabs-at-the-bottom-of-the-screen
+.config(['$ionicConfigProvider', function($ionicConfigProvider) {
+
+    $ionicConfigProvider.tabs.position('bottom'); // other values: top
+
+}])
 
 ;
