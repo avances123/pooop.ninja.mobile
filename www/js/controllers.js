@@ -1,7 +1,8 @@
 angular.module('starter.controllers', ['restangular'])
 
 .controller('DashCtrl', function($scope,Restangular) {
-  Restangular.one('pooopers','avances123').get().then(function  (poooper) {
+  var todos = Restangular.all('pooopers');
+  todos.one('avances123').get().then(function  (poooper) {
     $scope.poooper = poooper;
   })
 
@@ -35,14 +36,18 @@ angular.module('starter.controllers', ['restangular'])
   $scope.chat = Chats.get($stateParams.chatId);
 })
 
+
+
+
 .controller('AccountCtrl', function($scope,Restangular) {
-  Restangular.one('pooopers','avances123').get().then(function  (poooper) {
+
+  var todos = Restangular.all('pooopers');
+  todos.one('avances123').get().then(function  (poooper) {
     $scope.poooper = poooper;
     $scope.poooper.salary = parseFloat($scope.poooper.salary);  // TODO viene de la api en string
   })
 
   $scope.submit = function  () {
-    console.log("hola");
-    $scope.poooper.save();
+    $scope.poooper.put();
   }
 });
