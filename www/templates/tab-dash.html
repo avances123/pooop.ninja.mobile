@@ -4,10 +4,10 @@
       <div class="item item-divider">Dinero cagando</div>
       <div class="item item-body">
         <div>
-          <b>{{poooper.total_earned}} €</b> Ganados en total
+          <b>{{poooper.total_earned | number:2}} €</b> Ganados en total
         </div>
         <div>
-          <b>{{poooper.total_earned / poooper.total_pooops || 0}} €</b> Medios por cagada
+          <b>{{poooper.total_earned / poooper.total_pooops | number:2 || 0}} €</b> Medios por cagada
         </div>
       </div>
     </div>
@@ -18,9 +18,16 @@
           <b>{{poooper.total_pooops}}</b> Cagadas en total
         </div>
           <div>
-          <b>{{poooper.total_poooped}}</b> Horas cagando en total
+          <b>{{poooper.total_poooped | number:2}}</b> Horas cagando en total
         </div>
       </div>
     </div>
+    <ion-list show-delete="true">
+      <ion-item ng-repeat="cagada in cagadas">
+        <!-- <ion-delete-button class="ion-minus-circled" ng-click="onItemDelete(item)"></ion-delete-button> -->
+         {{cagada.start | date:'short'}}
+         <span class="badge badge-positive">{{ cagada.money | number:2}} €</span>
+      </ion-item>
+    </ion-list>
   </ion-content>
 </ion-view>

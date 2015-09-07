@@ -1,9 +1,15 @@
 angular.module('starter.controllers', ['restangular'])
 
 .controller('DashCtrl', function($scope,Restangular) {
-  var todos = Restangular.all('pooopers');
-  todos.one('avances123').get().then(function  (poooper) {
+  var usuarios = Restangular.all('pooopers');
+  usuarios.one('avances123').get().then(function  (poooper) {
     $scope.poooper = poooper;
+  })
+
+  var cagadas = Restangular.all('pooops');
+  cagadas.getList().then(function  (cagadas) {
+    $scope.cagadas = cagadas;
+    
   })
 
 })
