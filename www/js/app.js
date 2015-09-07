@@ -99,9 +99,9 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','r
 }])
 
 
-.filter('fecha', function() {
+.filter('duration', function() {
     return function(input) {
-      return moment(input);
+      return moment.duration(input,'seconds').humanize();
     };
   })
 
