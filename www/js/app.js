@@ -98,4 +98,11 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','r
 
 }])
 
+
+.filter('fecha', function() {
+    return function(input) {
+      return moment(input);
+    };
+  })
+
 ;

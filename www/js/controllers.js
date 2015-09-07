@@ -22,6 +22,9 @@ angular.module('starter.controllers', ['restangular'])
   //
   //$scope.$on('$ionicView.enter', function(e) {
   //});
+  $scope.utc_offset = moment().utcOffset();
+  console.log($scope.utc_offset);
+
   $scope.my_pooop = null;
 
   $scope.new_pooop = function () {
