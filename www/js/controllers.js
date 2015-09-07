@@ -9,7 +9,7 @@ angular.module('starter.controllers', ['restangular'])
   var cagadas = Restangular.all('pooops');
   cagadas.getList().then(function  (cagadas) {
     $scope.cagadas = cagadas;
-    
+
   })
 
 })
@@ -55,7 +55,7 @@ angular.module('starter.controllers', ['restangular'])
   $scope.submit = function  () {
     console.log("submit");
     $scope.poooper.save().then(function  (poooper) {
-      $scope.myForm.$dirty = false;
+      $scope.myForm.$setPristine();
     })
   }
 
