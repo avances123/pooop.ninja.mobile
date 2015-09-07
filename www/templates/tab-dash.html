@@ -6,7 +6,7 @@
             Total ganado <span class="badge badge-positive">{{poooper.total_earned | number:2}} €</span>
       </div>
       <div class="item item-text-wrap">
-            Cagada media <span class="badge badge-calm">{{poooper.total_earned / poooper.total_pooops | number:2 || 0}} €</span>
+            Cagada media <span class="badge badge-calm">{{poooper.total_earned / poooper.total_pooops | number:2 || 0 | number:2}} €</span>
       </div>
       <div class="item item-text-wrap">
             Cagando en total <span class="badge badge-calm">{{poooper.total_poooped | number:2}} h</span>
@@ -17,7 +17,7 @@
     <div class="list card">
       <ion-list>
         <div class="item item-divider">Lista de cagadas</div>
-        <ion-item ng-repeat="cagada in cagadas" class="item item-text-wrap">
+        <ion-item ng-repeat="cagada in cagadas | orderBy:'-start'" class="item item-text-wrap">
           {{cagada.start | date:'short'}}
           <span class="badge badge-positive">{{ cagada.money | number:2}} €</span>
         </ion-item>
