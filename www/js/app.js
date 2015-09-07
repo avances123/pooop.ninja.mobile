@@ -8,6 +8,8 @@
 angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','restangular'])
 
 .run(function($ionicPlatform) {
+  // http://stackoverflow.com/a/25842472/472866
+  moment.locale(window.navigator.userLanguage || window.navigator.language);
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
