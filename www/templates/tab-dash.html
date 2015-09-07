@@ -18,7 +18,7 @@
       <ion-list>
         <div class="item item-divider">Lista de cagadas</div>
         <ion-item ng-repeat="cagada in cagadas | orderBy:'-start'" class="item item-text-wrap">
-          {{cagada.start | date:'short'}}
+          {{cagada.start | fromNow}}
           <span class="badge badge-positive">{{ cagada.money | number:2}} €</span>
         </ion-item>
       </ion-list>

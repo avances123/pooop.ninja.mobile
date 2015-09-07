@@ -107,4 +107,10 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','r
     };
   })
 
+.filter('fromNow', function() {
+    return function(input) {
+      return moment(input).fromNow();
+    };
+  })
+
 ;
