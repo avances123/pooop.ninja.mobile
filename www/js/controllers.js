@@ -39,7 +39,7 @@ angular.module('starter.controllers', ['restangular'])
 
 
 
-.controller('AccountCtrl', function($scope,Restangular,$state) {
+.controller('AccountCtrl', function($scope,Restangular,$state,$ionicPopup) {
 
   var todos = Restangular.all('pooopers');
   todos.one('avances123').get().then(function  (poooper) {
@@ -53,10 +53,27 @@ angular.module('starter.controllers', ['restangular'])
     })
   }
 
-  $scope.reset = function  () {
-    $scope.poooper.post('reset').then(function () {
-      $state.go('tab.dash');  
-    })
-    
-  }
+
+
+  $scope.reset = function() {
+    var confirmPopup = $ionicPopup.confirm({
+     title: 'Resetear datos',
+     template: 'Estas seguro de querer borrar todo y dejarlo a cero?'
+    });
+
+    confirmPopup.then(function(res) {
+     if(res) {
+        $scope.poooper.post('reset').then(function () {
+          $state.go('tab.dash');  
+        })
+     } else {
+       console.log('You are not sure');
+     }
+   });
+ };
+
+
+
+
+
 });
