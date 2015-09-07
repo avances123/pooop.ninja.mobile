@@ -39,7 +39,7 @@ angular.module('starter.controllers', ['restangular'])
 
 
 
-.controller('AccountCtrl', function($scope,Restangular) {
+.controller('AccountCtrl', function($scope,Restangular,$state) {
 
   var todos = Restangular.all('pooopers');
   todos.one('avances123').get().then(function  (poooper) {
@@ -54,6 +54,9 @@ angular.module('starter.controllers', ['restangular'])
   }
 
   $scope.reset = function  () {
-    console.log("reset");
+    $scope.poooper.post('reset').then(function () {
+      $state.go('tab.dash');  
+    })
+    
   }
 });
