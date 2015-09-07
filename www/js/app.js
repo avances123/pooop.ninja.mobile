@@ -103,7 +103,13 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','r
 
 .filter('duration', function() {
     return function(input) {
-      return moment.duration(input,'seconds').humanize();
+      if (input == 0){
+        return "0"
+      }
+      else
+      {
+        return moment.duration(input,'seconds').humanize();
+      }
     };
   })
 
