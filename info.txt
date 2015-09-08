@@ -1,3 +1,9 @@
+Node version: v0.10.37
+
+Cordova version: 5.1.1
+
+Config.xml file: 
+
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <widget id="com.ionicframework.pooopninjamobile682324" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
   <name>Pooop Ninja</name>
@@ -41,3 +47,10 @@
   </platform>
   <icon src="resources/android/icon/drawable-xhdpi-icon.png"/>
 </widget>
+
+Plugins: 
+
+com.ionic.keyboard,cordova-plugin-console,cordova-plugin-device,cordova-plugin-inappbrowser,cordova-plugin-splashscreen,cordova-plugin-whitelist
+
+Error retrieving Android platform information: Error: android: Command failed with exit code ENOENT
+
